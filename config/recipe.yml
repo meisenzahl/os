@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: template
+name: os
 # description will be included in the image's metadata
 description: This is my personal OS image.
 
@@ -24,8 +24,8 @@ modules:
       # - micro
       # - starship
     remove:
-      - firefox # default firefox removed in favor of flatpak
-      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+      # - firefox # default firefox removed in favor of flatpak
+      # - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -35,7 +35,7 @@ modules:
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        - org.mozilla.firefox
+        # - org.mozilla.firefox
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
